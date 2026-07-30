@@ -1,9 +1,10 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router-dom";
 
 export function CourseCard({ course }) {
+  const navigate = useNavigate()
   return (
-    <Link to="/coursedetails">
-      <article className="course-card">
+    <Link to={`/courses/${course.id}`}>
+      <article className="course-card" onClick={() => navigate(`/courses/${course.id}`)}>
         <img src={course.image} alt={course.title} className="course-image" />
         <div className="course-info">
           <h3>
