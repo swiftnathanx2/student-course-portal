@@ -6,7 +6,13 @@ import { useCourses } from "../hooks/useCourses";
 export function Dashboard() {
   const { courses, isloading, error } = useCourses();
 
-  const courseState = () => ({ courses, isloading, error });
+  if (isloading) {
+    return <p>loading courses ....</p>;
+  }
+
+  if (error) {
+    return <p>Error : {error}</p>;
+  }
 
   return (
     <div className="dashboard-container">
@@ -14,7 +20,7 @@ export function Dashboard() {
         <Sidebar />
       </div>
       <div className="course-container">
-        <CourseList courseState={ courseState } />
+        <CourseList courses={courses} />
       </div>
     </div>
   );

@@ -39,9 +39,11 @@ body {
 
 .header {
   font-family: "Ubuntu Sans" sans-serif;
-  font-size: 2.3rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #b3b0b0;
+  text-align: right;
+  margin: 5px;
 }
 
 .course-grid {
